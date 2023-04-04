@@ -51,6 +51,7 @@ const checkForWin = () => {
 const ticTacToe = (row, column) => {
   // Your code here to place a marker on the board
   // then check for a win
+  board[row][column] = playerTurn;
 }
 
 const getPrompt = () => {
