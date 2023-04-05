@@ -34,6 +34,14 @@ const printBoard = () => {
 
 const horizontalWin = () => {
   // Your code here to check for horizontal wins
+  // if (board[0][0] === playerTurn && board[0][1] === playerTurn && board [0][2] === playerTurn) return true
+  // if (board[1][0] === playerTurn && board[1][1] === playerTurn && board [1][2] === playerTurn) return true
+  // if (board[2][0] === playerTurn && board[2][1] === playerTurn && board [2][2] === playerTurn) return true
+  // OR
+  for(let i = 0; i < board.length; i++){
+  if (board[i][0] === playerTurn && board[i][1] === playerTurn && board [i][2] === playerTurn) return true
+  }
+  return false;
 }
 
 const verticalWin = () => {
@@ -52,6 +60,14 @@ const ticTacToe = (row, column) => {
   // Your code here to place a marker on the board
   // then check for a win
   board[row][column] = playerTurn;
+
+  if(playerTurn === 'X'){
+    playerTurn = 'O'
+  }
+  else{
+    playerTurn = 'X'
+  }
+  //can also playerTurn === "X" ? playerTurn = "O" : playerTurn = "X"
 }
 
 const getPrompt = () => {
