@@ -46,14 +46,25 @@ const horizontalWin = () => {
 
 const verticalWin = () => {
   // Your code here to check for vertical wins
+  for(let i = 0; i < board.length; i++){
+  if (board[0][i] === playerTurn && board[1][i] === playerTurn && board [2][i] === playerTurn) return true
+  }
+  return false;
 }
 
 const diagonalWin = () => {
   // Your code here to check for diagonal wins
+  if (board[0][0] === playerTurn && board[1][1] === playerTurn && board [2][2] === playerTurn) return true
+  if (board[2][0] === playerTurn && board[1][1] === playerTurn && board [0][2] === playerTurn) return true
 }
 
 const checkForWin = () => {
   // Your code here call each of the check for types of wins
+  if(horizontalWin || verticalWin || diagonalWin){
+    return true;
+  } 
+  else
+    return false;
 }
 
 const ticTacToe = (row, column) => {
