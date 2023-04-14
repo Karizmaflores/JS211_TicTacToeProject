@@ -60,7 +60,7 @@ const diagonalWin = () => {
 
 const checkForWin = () => {
   // Your code here call each of the check for types of wins
-  if(horizontalWin || verticalWin || diagonalWin){
+  if(horizontalWin() || verticalWin() || diagonalWin()){
     return true;
   } 
   else
@@ -71,7 +71,7 @@ const ticTacToe = (row, column) => {
   // Your code here to place a marker on the board
   // then check for a win
   board[row][column] = playerTurn;
-
+checkForWin();
   if(playerTurn === 'X'){
     playerTurn = 'O'
   }
